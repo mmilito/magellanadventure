@@ -29,36 +29,36 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-// app.get('/places/:id', function(req, res) {
-// 	var city = req.params.id.toLowerCase();
+app.get('/places/:id', function(req, res) {
+	var city = req.params.id.toLowerCase();
 
-// 	var next = _.find(places, function(seville){
-// 		console.log(places.place);
-// 		return places[0].place===city;
-// 	});
-// 	console.log(next);
-// 	res.render(next);
+	var next = _.find(places, function(obj){
+		//console.log(places.place);
+		return obj.place===city;
+	});
+	console.log(next.next);
+	res.render(next.next);
+});
+// app.get('/canary', function(req, res) {
+// 	res.render('canary');
 // });
-app.get('/canary', function(req, res) {
-	res.render('canary');
-});
 
 
-app.get('/capeverde', function(req, res) {
-	res.render('capeverde');
-});
+// app.get('/capeverde', function(req, res) {
+// 	res.render('capeverde');
+// });
 
-app.get('/straitsofmagellan', function(req, res) {
-	res.render('straitsofmagellan');
-});
+// app.get('/straitsofmagellan', function(req, res) {
+// 	res.render('straitsofmagellan');
+// });
 
-app.get('/guam', function(req, res) {
-	res.render('guam');
-});
+// app.get('/guam', function(req, res) {
+// 	res.render('guam');
+// });
 
-app.get('/phillipines', function(req, res) {
-	res.render('phillipines');
-});
+// app.get('/phillipines', function(req, res) {
+// 	res.render('phillipines');
+// });
 
 var server = app.listen(9858, function() {
 	console.log('Express server listening on port ' + server.address().port);
